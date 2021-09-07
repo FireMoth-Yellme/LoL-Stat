@@ -1,12 +1,9 @@
 from API import *
 
 ### in API.py
-# QUEUE       = "RANKED_SOLO_5x5"
-# TIER        = "GOLD"
-# DIVISION    = "III"
-# PAGE        = "1"
+# USERNAME = "야식은치킨이지"
 
-### get league data
+### get summoner data
 url = GET("kr", "lol/summoner/v4/summoners/by-name/{summonerName}".format(summonerName=USERNAME), False)
 res = requests.get(url)
 
