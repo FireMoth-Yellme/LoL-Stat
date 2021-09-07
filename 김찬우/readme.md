@@ -1,0 +1,1 @@
+정리한 내용은 [여기](https://docs.google.com/document/d/1ceITYkjoGsAg30LZOH8eKujCQY1xdGcEVLfyTUfsZl0/edit?usp=sharing)서 확인하실 수 있습니다.
