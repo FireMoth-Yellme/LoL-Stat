@@ -1,5 +1,6 @@
 from API import *
 
+
 TYPE    = "ranked"     # ranked / normal 
 START   = 0
 COUNT   = 100
