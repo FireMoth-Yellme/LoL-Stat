@@ -7,6 +7,8 @@ from API import *
 url = GET("kr", "lol/summoner/v4/summoners/by-name/{summonerName}".format(summonerName=USERNAME), False)
 res = requests.get(url)
 
+import pandas as pd
+
 if res.status_code == 200:
     json_data = json.loads(res.text)
     print("read successfully : {length}".format(length=len(json_data)))
