@@ -87,24 +87,24 @@ pd.DataFrame(puuid_BRONZE).to_csv("data/{}".format(FILE_NAME_BRONZE_SUMMONERS), 
 #             json.dump(json_data, outfile, indent=4)
 #     else:
 #         print("error")
-# puuid_GOLD = [[0]*10 for x in range(4)]
-# for i in range(4):
-#     with open("data/{}".format(FILE_NAME_GOLD[i]), "r") as json_file:
-#         summoners = pd.read_json(json_file)
-#         summonerId = summoners["summonerId"]
-#     if len(summonerId) > 0:
-#         for j in range(10):
-#             url = GET("kr", "/lol/summoner/v4/summoners/{encryptedSummonerId}".format(encryptedSummonerId=summonerId[j]),False)
-#             res = requests.get(url)
-#             if res.status_code == 200:
-#                 if ++LENGTH_OF_REQUESTS % 20 == 0:
-#                     sleep(1)
-#                     if LENGTH_OF_REQUESTS == 100:
-#                         sleep(120)
-#                         LENGTH_OF_REQUESTS = 0
-#                 json_data = json.loads(res.text)
-#                 print("read successfully : {length}".format(length=len(json_data)))
-#                 puuid_GOLD[i][j] = json_data['puuid']
-#     else:
-#         print('error')
-# pd.DataFrame(puuid_GOLD).to_csv("data/{}".format(FILE_NAME_GOLD_SUMMONERS), index=False)
+puuid_GOLD = [[0]*10 for x in range(4)]
+for i in range(4):
+    with open("data/{}".format(FILE_NAME_GOLD[i]), "r") as json_file:
+        summoners = pd.read_json(json_file)
+        summonerId = summoners["summonerId"]
+    if len(summonerId) > 0:
+        for j in range(10):
+            url = GET("kr", "/lol/summoner/v4/summoners/{encryptedSummonerId}".format(encryptedSummonerId=summonerId[j]),False)
+            res = requests.get(url)
+            if res.status_code == 200:
+                if ++LENGTH_OF_REQUESTS % 20 == 0:
+                    sleep(1)
+                    if LENGTH_OF_REQUESTS == 100:
+                        sleep(120)
+                        LENGTH_OF_REQUESTS = 0
+                json_data = json.loads(res.text)
+                print("read successfully : {length}".format(length=len(json_data)))
+                puuid_GOLD[i][j] = json_data['puuid']
+    else:
+        print('error')
+pd.DataFrame(puuid_GOLD).to_csv("data/{}".format(FILE_NAME_GOLD_SUMMONERS), index=False)
