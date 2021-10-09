@@ -5,7 +5,7 @@ TYPE    = "ranked"     # ranked / normal
 START   = 0
 COUNT   = 100
 
-num_of_iterator = 2     # 100 * num_of_iterator
+num_of_iterator = 10     # 100 * num_of_iterator
 
 ### get puuid by JSON file
 with open(FILE_NAME_BY_SUMMONER, "r") as json_file:
